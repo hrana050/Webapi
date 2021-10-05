@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CurrentSession">
+    <Key>
+      <PropertyRef Name="SessionID" />
+    </Key>
+    <Property Name="SessionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SessionName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="YearId" Type="Int32" />
+    <Property Name="IsCurrentSession" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NPF_Enquiry">
+    <Key>
+      <PropertyRef Name="EnqId" />
+    </Key>
+    <Property Name="EnqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnqNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="NPF_NPF_details">
+    <Key>
+      <PropertyRef Name="EnqId" />
+    </Key>
+    <Property Name="EnqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnqNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="oe_exams">
+    <Key>
+      <PropertyRef Name="examid" />
+    </Key>
+    <Property Name="examid" Type="Int32" Nullable="false" />
+    <Property Name="mid" Type="Int32" />
+    <Property Name="sid" Type="Int32" />
+    <Property Name="noq" Type="Int32" />
+    <Property Name="nocans" Type="Int32" />
+    <Property Name="stdate" Type="DateTime" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="oe_members" Relationship="Self.FK__oe_exams__mid__145C0A3F" FromRole="oe_exams" ToRole="oe_members" />
+    <NavigationProperty Name="oe_subjects" Relationship="Self.FK__oe_exams__sid__173876EA" FromRole="oe_exams" ToRole="oe_subjects" />
+  </EntityType>
+  <EntityType Name="oe_members">
+    <Key>
+      <PropertyRef Name="mid" />
+    </Key>
+    <Property Name="mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Enq_No" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dlv" Type="DateTime" Precision="3" />
+    <Property Name="dr" Type="DateTime" Precision="3" />
+    <Property Name="Course_id" Type="Int32" />
+    <Property Name="SessionID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="oe_exams" Relationship="Self.FK__oe_exams__mid__145C0A3F" FromRole="oe_members" ToRole="oe_exams" />
+  </EntityType>
+  <EntityType Name="oe_questions">
+    <Key>
+      <PropertyRef Name="qid" />
+    </Key>
+    <Property Name="qid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="qodr" Type="Int32" />
+    <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ans1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ans2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ans3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ans4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sid" Type="Int32" />
+    <Property Name="Course_id" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="oe_subjects" Relationship="Self.FK__oe_question__sid__117F9D94" FromRole="oe_questions" ToRole="oe_subjects" />
+  </EntityType>
+  <EntityType Name="oe_subjects">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="noq" Type="Int32" />
+    <Property Name="Course_id" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="oe_exams" Relationship="Self.FK__oe_exams__sid__173876EA" FromRole="oe_subjects" ToRole="oe_exams" />
+    <NavigationProperty Name="oe_questions" Relationship="Self.FK__oe_question__sid__117F9D94" FromRole="oe_subjects" ToRole="oe_questions" />
+  </EntityType>
+  <EntityType Name="Course_Level_Master">
+    <Key>
+      <PropertyRef Name="Course_Level_Id" />
+      <PropertyRef Name="Course_Level_Name" />
+    </Key>
+    <Property Name="Course_Level_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Level_Name" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course_Master">
+    <Key>
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="Course_Level_Id" />
+      <PropertyRef Name="Course_Name" />
+      <PropertyRef Name="Course_Duration" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Level_Id" Type="Int32" Nullable="false" />
+    <Property Name="Course_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_Duration" Type="Int32" Nullable="false" />
+    <Property Name="Course_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SchoolId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="oe_examsresult">
+    <Key>
+      <PropertyRef Name="examid" />
+    </Key>
+    <Property Name="examid" Type="Int32" Nullable="false" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="sid" Type="Int32" />
+    <Property Name="s_id" Type="Int32" />
+    <Property Name="q_id" Type="Int32" />
+    <Property Name="c_ans" Type="Int32" />
+    <Property Name="u_ans" Type="Int32" />
+    <Property Name="sysdate" Type="DateTime" Precision="3" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="oe_option">
+    <Key>
+      <PropertyRef Name="OpID" />
+    </Key>
+    <Property Name="OpID" Type="Int32" Nullable="false" />
+    <Property Name="OpValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OpChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__oe_exams__mid__145C0A3F">
+    <End Role="oe_members" Type="Self.oe_members" Multiplicity="0..1" />
+    <End Role="oe_exams" Type="Self.oe_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_members">
+        <PropertyRef Name="mid" />
+      </Principal>
+      <Dependent Role="oe_exams">
+        <PropertyRef Name="mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__oe_exams__sid__173876EA">
+    <End Role="oe_subjects" Type="Self.oe_subjects" Multiplicity="0..1" />
+    <End Role="oe_exams" Type="Self.oe_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_subjects">
+        <PropertyRef Name="sid" />
+      </Principal>
+      <Dependent Role="oe_exams">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__oe_question__sid__117F9D94">
+    <End Role="oe_subjects" Type="Self.oe_subjects" Multiplicity="0..1" />
+    <End Role="oe_questions" Type="Self.oe_questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_subjects">
+        <PropertyRef Name="sid" />
+      </Principal>
+      <Dependent Role="oe_questions">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="demoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CurrentSessions" EntityType="Self.CurrentSession" />
+    <EntitySet Name="NPF_Enquiry" EntityType="Self.NPF_Enquiry" />
+    <EntitySet Name="NPF_NPF_details" EntityType="Self.NPF_NPF_details" />
+    <EntitySet Name="oe_exams" EntityType="Self.oe_exams" />
+    <EntitySet Name="oe_members" EntityType="Self.oe_members" />
+    <EntitySet Name="oe_questions" EntityType="Self.oe_questions" />
+    <EntitySet Name="oe_subjects" EntityType="Self.oe_subjects" />
+    <EntitySet Name="Course_Level_Master" EntityType="Self.Course_Level_Master" />
+    <EntitySet Name="Course_Master" EntityType="Self.Course_Master" />
+    <EntitySet Name="oe_examsresult" EntityType="Self.oe_examsresult" />
+    <EntitySet Name="oe_option" EntityType="Self.oe_option" />
+    <AssociationSet Name="FK__oe_exams__mid__145C0A3F" Association="Self.FK__oe_exams__mid__145C0A3F">
+      <End Role="oe_members" EntitySet="oe_members" />
+      <End Role="oe_exams" EntitySet="oe_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__oe_exams__sid__173876EA" Association="Self.FK__oe_exams__sid__173876EA">
+      <End Role="oe_subjects" EntitySet="oe_subjects" />
+      <End Role="oe_exams" EntitySet="oe_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__oe_question__sid__117F9D94" Association="Self.FK__oe_question__sid__117F9D94">
+      <End Role="oe_subjects" EntitySet="oe_subjects" />
+      <End Role="oe_questions" EntitySet="oe_questions" />
+    </AssociationSet>
+    <FunctionImport Name="getexamdetails" ReturnType="Collection(demoModel.getexamdetails_Result)">
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetNpfEnquiry" ReturnType="Collection(demoModel.GetNpfEnquiry_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="CourseName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetResultDetails" ReturnType="Collection(demoModel.GetResultDetails_Result)">
+      <Parameter Name="enqno" Mode="In" Type="String" />
+      <Parameter Name="mid" Mode="In" Type="String" />
+      <Parameter Name="sid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetResultPrint" ReturnType="Collection(demoModel.GetResultPrint_Result)">
+      <Parameter Name="enqno" Mode="In" Type="String" />
+      <Parameter Name="mid" Mode="In" Type="String" />
+      <Parameter Name="sid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetResultValue" ReturnType="Collection(demoModel.GetResultValue_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="mobile" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="enqno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetResultValueUni" ReturnType="Collection(demoModel.GetResultValueUni_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSDetails" ReturnType="Collection(demoModel.GetSDetails_Result)">
+      <Parameter Name="Sid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetStudentDetails" ReturnType="Collection(demoModel.GetStudentDetails_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="mobile" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="enqno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertAnswerData">
+      <Parameter Name="examid" Mode="In" Type="Int32" />
+      <Parameter Name="u_id" Mode="In" Type="Int32" />
+      <Parameter Name="s_id" Mode="In" Type="Int32" />
+      <Parameter Name="q_id" Mode="In" Type="Int32" />
+      <Parameter Name="c_ans" Mode="In" Type="Int32" />
+      <Parameter Name="u_ans" Mode="In" Type="Int32" />
+      <Parameter Name="StartDateTime" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="InsertLoginDetail">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="Eamil" Mode="In" Type="String" />
+      <Parameter Name="Mobileno" Mode="In" Type="String" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="CourseId" Mode="In" Type="Int32" />
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="INSERTQuestion">
+      <Parameter Name="A" Mode="In" Type="String" />
+      <Parameter Name="b" Mode="In" Type="String" />
+      <Parameter Name="c" Mode="In" Type="String" />
+      <Parameter Name="d" Mode="In" Type="String" />
+      <Parameter Name="e" Mode="In" Type="String" />
+      <Parameter Name="f" Mode="In" Type="String" />
+      <Parameter Name="g" Mode="In" Type="String" />
+      <Parameter Name="h" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NPF_InsertEnquiry">
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="CourseName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SendExamMail">
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SendMailForExam" ReturnType="Collection(demoModel.SendMailForExam_Result)">
+      <Parameter Name="EnqNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateQuestion">
+      <Parameter Name="question" Mode="In" Type="String" />
+      <Parameter Name="ans1" Mode="In" Type="String" />
+      <Parameter Name="ans2" Mode="In" Type="String" />
+      <Parameter Name="ans3" Mode="In" Type="String" />
+      <Parameter Name="ans4" Mode="In" Type="String" />
+      <Parameter Name="qid" Mode="In" Type="Int32" />
+      <Parameter Name="cans" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateStudetExamQuestion">
+      <Parameter Name="Examid" Mode="In" Type="Int32" />
+      <Parameter Name="Questionid" Mode="In" Type="Int32" />
+      <Parameter Name="u_ans" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="getexamdetails_Result">
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="pwd" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetNpfEnquiry_Result">
+    <Property Type="Int32" Name="EnqId" Nullable="false" />
+    <Property Type="String" Name="EnqNo" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="GetResultDetails_Result">
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="question" Nullable="false" />
+    <Property Type="String" Name="ans1" Nullable="false" />
+    <Property Type="String" Name="ans2" Nullable="false" />
+    <Property Type="String" Name="ans3" Nullable="false" />
+    <Property Type="String" Name="ans4" Nullable="false" />
+    <Property Type="Int32" Name="mid" Nullable="false" />
+    <Property Type="Int32" Name="c_ans" Nullable="true" />
+    <Property Type="Int32" Name="u_ans" Nullable="true" />
+    <Property Type="String" Name="Result" Nullable="false" MaxLength="7" />
+    <Property Type="Int32" Name="examid" Nullable="false" />
+    <Property Type="Int32" Name="sid" Nullable="true" />
+    <Property Type="Int32" Name="qid" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetResultPrint_Result">
+    <Property Type="String" Name="Course_Code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Result" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="UserAnswer" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="qid" Nullable="false" />
+    <Property Type="Int32" Name="qodr" Nullable="true" />
+    <Property Type="String" Name="question" Nullable="false" />
+    <Property Type="String" Name="ans1" Nullable="false" />
+    <Property Type="String" Name="ans2" Nullable="false" />
+    <Property Type="String" Name="ans3" Nullable="false" />
+    <Property Type="String" Name="ans4" Nullable="false" />
+    <Property Type="String" Name="cans" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="sid" Nullable="true" />
+    <Property Type="Int32" Name="Course_id" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetResultValue_Result">
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Course_Code" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="mid" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="CrtAns" Nullable="true" />
+    <Property Type="Int32" Name="wrng" Nullable="true" />
+    <Property Type="Decimal" Name="crtprct" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="wrngprcnt" Nullable="true" />
+    <Property Type="Int32" Name="sid" Nullable="true" />
+    <Property Type="Int32" Name="Course_Id" Nullable="true" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetResultValueUni_Result">
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="lname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Course_Code" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="dr" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="mid" Nullable="false" />
+    <Property Type="Int32" Name="AttemptedQuestion" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="CrtAns" Nullable="true" />
+    <Property Type="Int32" Name="wrng" Nullable="true" />
+    <Property Type="Int32" Name="crtprct" Nullable="true" />
+    <Property Type="Int32" Name="wrngprcnt" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSDetails_Result">
+    <Property Type="Int32" Name="mid" Nullable="false" />
+    <Property Type="String" Name="lname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Mobileno" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="pwd" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="dlv" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dr" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Course_id" Nullable="true" />
+    <Property Type="Int32" Name="SessionID" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetStudentDetails_Result">
+    <Property Type="Int32" Name="mid" Nullable="false" />
+    <Property Type="String" Name="lname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Enq_No" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Mobileno" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="pwd" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="dlv" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dr" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Course_id" Nullable="true" />
+    <Property Type="Int32" Name="SessionID" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SendMailForExam_Result">
+    <Property Type="String" Name="EnqNo" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CourseName" Nullable="true" />
+  </ComplexType>
+</Schema>

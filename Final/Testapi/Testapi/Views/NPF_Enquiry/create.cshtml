@@ -1,0 +1,69 @@
+﻿@model View_Model.vmenquiry
+@{
+    ViewBag.Title = "create";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<center>
+    <fieldset  style="width:50%">
+        <div class="form-horizontal" style="width:50%">
+            <h4> NPF Enquiry </h4> <hr />
+            @Html.ValidationSummary(true, "", new
+            {
+                @class = "text-danger"
+            })
+            <div class="form-group" style=" width: 50%; text-align: left;">
+
+                <div class="col-md-6" style="padding-bottom:15px;">
+                    Enq No : @Html.TextBoxFor(m => m.Enqno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.Enqno, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6" style="padding-bottom:15px;">
+                    Name : @Html.TextBoxFor(m => m.name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-6" style="padding-bottom:15px;">
+                    Email Id
+
+                    @Html.TextBoxFor(m => m.emailid, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.emailid, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-6" style="padding-bottom:15px;">
+                    Mobile No :
+
+                    @Html.TextBoxFor(m => m.mobileno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.mobileno, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-6" style="padding-bottom:15px;">
+                    Course Name :
+
+                    @Html.DropDownListFor(m => m.coursename, new List<SelectListItem>
+                  {
+                                      new SelectListItem() {Text = "Select Course", Value="Select Course"},
+                                      new SelectListItem() {Text = "B.Tech", Value="B.Tech"},
+                                      new SelectListItem() {Text = "M.Tech", Value="M.Tech"},
+                                      new SelectListItem() {Text = "BA", Value="BA"}
+                  },new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.coursename, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</center>
+}
+
+

@@ -1,0 +1,12 @@
+D:\Himmat Singh\Testapi\DAL\bin\Debug\DAL.dll.config
+D:\Himmat Singh\Testapi\DAL\bin\Debug\DAL.dll
+D:\Himmat Singh\Testapi\DAL\bin\Debug\DAL.pdb
+D:\Himmat Singh\Testapi\DAL\bin\Debug\EntityFramework.dll
+D:\Himmat Singh\Testapi\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Himmat Singh\Testapi\DAL\bin\Debug\EntityFramework.xml
+D:\Himmat Singh\Testapi\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Himmat Singh\Testapi\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Himmat Singh\Testapi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Himmat Singh\Testapi\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Himmat Singh\Testapi\DAL\obj\Debug\DAL.dll
+D:\Himmat Singh\Testapi\DAL\obj\Debug\DAL.pdb

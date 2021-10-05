@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.Course_Level_Master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Course_Level_Master">
+    <Key>
+      <PropertyRef Name="Course_Level_Id" />
+      <PropertyRef Name="Course_Level_Name" />
+    </Key>
+    <Property Name="Course_Level_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Level_Name" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.Course_Master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Course_Master">
+    <Key>
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="Course_Level_Id" />
+      <PropertyRef Name="Course_Name" />
+      <PropertyRef Name="Course_Duration" />
+    </Key>
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Level_Id" Type="int" Nullable="false" />
+    <Property Name="Course_Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Course_Duration" Type="int" Nullable="false" />
+    <Property Name="Course_Code" Type="varchar" MaxLength="100" />
+    <Property Name="SchoolId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="CurrentSession">
+    <Key>
+      <PropertyRef Name="SessionID" />
+    </Key>
+    <Property Name="SessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SessionName" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="YearId" Type="int" />
+    <Property Name="IsCurrentSession" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NPF_Enquiry">
+    <Key>
+      <PropertyRef Name="EnqId" />
+    </Key>
+    <Property Name="EnqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnqNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NPF_NPF_details">
+    <Key>
+      <PropertyRef Name="EnqId" />
+    </Key>
+    <Property Name="EnqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnqNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'demo.dbo.NPFCourse' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="NPFCourse">
+          <Property Name="CourseId" Type="int" />
+          <Property Name="Course" Type="nvarchar" MaxLength="255" />
+          <Property Name="Course_Code" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="oe_exams">
+    <Key>
+      <PropertyRef Name="examid" />
+    </Key>
+    <Property Name="examid" Type="int" Nullable="false" />
+    <Property Name="mid" Type="int" />
+    <Property Name="sid" Type="int" />
+    <Property Name="noq" Type="int" />
+    <Property Name="nocans" Type="int" />
+    <Property Name="stdate" Type="datetime" />
+    <Property Name="enddate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.oe_examsresult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="oe_examsresult">
+    <Key>
+      <PropertyRef Name="examid" />
+    </Key>
+    <Property Name="examid" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="sid" Type="int" />
+    <Property Name="s_id" Type="int" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="c_ans" Type="int" />
+    <Property Name="u_ans" Type="int" />
+    <Property Name="sysdate" Type="datetime" />
+    <Property Name="StartDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="oe_members">
+    <Key>
+      <PropertyRef Name="mid" />
+    </Key>
+    <Property Name="mid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lname" Type="varchar" MaxLength="100" />
+    <Property Name="Enq_No" Type="varchar" MaxLength="100" />
+    <Property Name="Mobileno" Type="varchar" MaxLength="100" />
+    <Property Name="pwd" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dlv" Type="datetime" />
+    <Property Name="dr" Type="datetime" />
+    <Property Name="Course_id" Type="int" />
+    <Property Name="SessionID" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.oe_option' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="oe_option">
+    <Key>
+      <PropertyRef Name="OpID" />
+    </Key>
+    <Property Name="OpID" Type="int" Nullable="false" />
+    <Property Name="OpValue" Type="varchar" MaxLength="50" />
+    <Property Name="OpChar" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="oe_questions">
+    <Key>
+      <PropertyRef Name="qid" />
+    </Key>
+    <Property Name="qid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="qodr" Type="int" />
+    <Property Name="question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ans1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ans2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ans3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ans4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cans" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="sid" Type="int" />
+    <Property Name="Course_id" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="oe_subjects">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sname" Type="varchar" MaxLength="20" />
+    <Property Name="noq" Type="int" />
+    <Property Name="Course_id" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <Association Name="FK__oe_exams__mid__145C0A3F">
+    <End Role="oe_members" Type="Self.oe_members" Multiplicity="0..1" />
+    <End Role="oe_exams" Type="Self.oe_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_members">
+        <PropertyRef Name="mid" />
+      </Principal>
+      <Dependent Role="oe_exams">
+        <PropertyRef Name="mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__oe_exams__sid__173876EA">
+    <End Role="oe_subjects" Type="Self.oe_subjects" Multiplicity="0..1" />
+    <End Role="oe_exams" Type="Self.oe_exams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_subjects">
+        <PropertyRef Name="sid" />
+      </Principal>
+      <Dependent Role="oe_exams">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__oe_question__sid__117F9D94">
+    <End Role="oe_subjects" Type="Self.oe_subjects" Multiplicity="0..1" />
+    <End Role="oe_questions" Type="Self.oe_questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oe_subjects">
+        <PropertyRef Name="sid" />
+      </Principal>
+      <Dependent Role="oe_questions">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="getexamdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EnqNo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetNpfEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="EnqNo" Type="varchar" Mode="In" />
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="CourseName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetResultDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="enqno" Type="varchar" Mode="In" />
+    <Parameter Name="mid" Type="varchar" Mode="In" />
+    <Parameter Name="sid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetResultPrint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="enqno" Type="varchar" Mode="In" />
+    <Parameter Name="mid" Type="varchar" Mode="In" />
+    <Parameter Name="sid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetResultValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="enqno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetResultValueUni" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Sid" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetStudentDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="enqno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertAnswerData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="examid" Type="int" Mode="In" />
+    <Parameter Name="u_id" Type="int" Mode="In" />
+    <Parameter Name="s_id" Type="int" Mode="In" />
+    <Parameter Name="q_id" Type="int" Mode="In" />
+    <Parameter Name="c_ans" Type="int" Mode="In" />
+    <Parameter Name="u_ans" Type="int" Mode="In" />
+    <Parameter Name="StartDateTime" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="InsertLoginDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="Eamil" Type="varchar" Mode="In" />
+    <Parameter Name="Mobileno" Type="varchar" Mode="In" />
+    <Parameter Name="Pass" Type="varchar" Mode="In" />
+    <Parameter Name="CourseId" Type="int" Mode="In" />
+    <Parameter Name="EnqNo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="INSERTQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="A" Type="varchar" Mode="In" />
+    <Parameter Name="b" Type="varchar" Mode="In" />
+    <Parameter Name="c" Type="varchar" Mode="In" />
+    <Parameter Name="d" Type="varchar" Mode="In" />
+    <Parameter Name="e" Type="varchar" Mode="In" />
+    <Parameter Name="f" Type="char" Mode="In" />
+    <Parameter Name="g" Type="varchar" Mode="In" />
+    <Parameter Name="h" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NPF_InsertEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EnqNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="MobileNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CourseName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SendExamMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EnqNo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SendMailForExam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EnqNo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="question" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ans1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ans2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ans3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ans4" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="qid" Type="int" Mode="In" />
+    <Parameter Name="cans" Type="char" Mode="In" />
+  </Function>
+  <Function Name="UpdateStudetExamQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Examid" Type="int" Mode="In" />
+    <Parameter Name="Questionid" Type="int" Mode="In" />
+    <Parameter Name="u_ans" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="demoModelStoreContainer">
+    <EntitySet Name="CurrentSession" EntityType="Self.CurrentSession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NPF_Enquiry" EntityType="Self.NPF_Enquiry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NPF_NPF_details" EntityType="Self.NPF_NPF_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oe_exams" EntityType="Self.oe_exams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oe_members" EntityType="Self.oe_members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oe_questions" EntityType="Self.oe_questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oe_subjects" EntityType="Self.oe_subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course_Level_Master" EntityType="Self.Course_Level_Master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Course_Level_Master].[Course_Level_Id] AS [Course_Level_Id], 
+    [Course_Level_Master].[Course_Level_Name] AS [Course_Level_Name]
+    FROM [dbo].[Course_Level_Master] AS [Course_Level_Master]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Course_Master" EntityType="Self.Course_Master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Course_Master].[CourseId] AS [CourseId], 
+    [Course_Master].[Course_Level_Id] AS [Course_Level_Id], 
+    [Course_Master].[Course_Name] AS [Course_Name], 
+    [Course_Master].[Course_Duration] AS [Course_Duration], 
+    [Course_Master].[Course_Code] AS [Course_Code], 
+    [Course_Master].[SchoolId] AS [SchoolId], 
+    [Course_Master].[Status] AS [Status]
+    FROM [dbo].[Course_Master] AS [Course_Master]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="oe_examsresult" EntityType="Self.oe_examsresult" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [oe_examsresult].[examid] AS [examid], 
+    [oe_examsresult].[u_id] AS [u_id], 
+    [oe_examsresult].[sid] AS [sid], 
+    [oe_examsresult].[s_id] AS [s_id], 
+    [oe_examsresult].[q_id] AS [q_id], 
+    [oe_examsresult].[c_ans] AS [c_ans], 
+    [oe_examsresult].[u_ans] AS [u_ans], 
+    [oe_examsresult].[sysdate] AS [sysdate], 
+    [oe_examsresult].[StartDateTime] AS [StartDateTime]
+    FROM [dbo].[oe_examsresult] AS [oe_examsresult]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="oe_option" EntityType="Self.oe_option" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [oe_option].[OpID] AS [OpID], 
+    [oe_option].[OpValue] AS [OpValue], 
+    [oe_option].[OpChar] AS [OpChar]
+    FROM [dbo].[oe_option] AS [oe_option]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__oe_exams__mid__145C0A3F" Association="Self.FK__oe_exams__mid__145C0A3F">
+      <End Role="oe_members" EntitySet="oe_members" />
+      <End Role="oe_exams" EntitySet="oe_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__oe_exams__sid__173876EA" Association="Self.FK__oe_exams__sid__173876EA">
+      <End Role="oe_subjects" EntitySet="oe_subjects" />
+      <End Role="oe_exams" EntitySet="oe_exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__oe_question__sid__117F9D94" Association="Self.FK__oe_question__sid__117F9D94">
+      <End Role="oe_subjects" EntitySet="oe_subjects" />
+      <End Role="oe_questions" EntitySet="oe_questions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

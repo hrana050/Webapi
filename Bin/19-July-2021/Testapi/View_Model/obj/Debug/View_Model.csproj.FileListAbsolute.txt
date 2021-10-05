@@ -1,0 +1,6 @@
+D:\Himmat Singh\Testapi\View_Model\bin\Debug\View_Model.dll
+D:\Himmat Singh\Testapi\View_Model\bin\Debug\View_Model.pdb
+D:\Himmat Singh\Testapi\View_Model\obj\Debug\View_Model.csprojAssemblyReference.cache
+D:\Himmat Singh\Testapi\View_Model\obj\Debug\View_Model.csproj.CoreCompileInputs.cache
+D:\Himmat Singh\Testapi\View_Model\obj\Debug\View_Model.dll
+D:\Himmat Singh\Testapi\View_Model\obj\Debug\View_Model.pdb

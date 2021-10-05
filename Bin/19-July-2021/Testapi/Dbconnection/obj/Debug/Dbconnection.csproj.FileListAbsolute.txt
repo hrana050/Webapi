@@ -1,0 +1,9 @@
+D:\Himmat Singh\Testapi\Dbconnection\obj\Debug\Dbconnection.csprojAssemblyReference.cache
+D:\Himmat Singh\Testapi\Dbconnection\obj\Debug\Dbconnection.csproj.CoreCompileInputs.cache
+D:\Himmat Singh\Testapi\Dbconnection\bin\Debug\Dbconnection.dll
+D:\Himmat Singh\Testapi\Dbconnection\bin\Debug\Dbconnection.pdb
+D:\Himmat Singh\Testapi\Dbconnection\bin\Debug\View_Model.dll
+D:\Himmat Singh\Testapi\Dbconnection\bin\Debug\View_Model.pdb
+D:\Himmat Singh\Testapi\Dbconnection\obj\Debug\Dbconnection.csproj.CopyComplete
+D:\Himmat Singh\Testapi\Dbconnection\obj\Debug\Dbconnection.dll
+D:\Himmat Singh\Testapi\Dbconnection\obj\Debug\Dbconnection.pdb

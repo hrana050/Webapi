@@ -1,0 +1,35 @@
+D:\Himmat Singh\Testapi\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\Himmat Singh\Testapi\Services\obj\Debug\Services.csprojAssemblyReference.cache
+D:\Himmat Singh\Testapi\Services\bin\Debug\Services.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\Services.pdb
+D:\Himmat Singh\Testapi\Services\bin\Debug\Dbconnection.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\View_Model.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\Dbconnection.pdb
+D:\Himmat Singh\Testapi\Services\bin\Debug\View_Model.pdb
+D:\Himmat Singh\Testapi\Services\obj\Debug\Services.csproj.CopyComplete
+D:\Himmat Singh\Testapi\Services\obj\Debug\Services.dll
+D:\Himmat Singh\Testapi\Services\obj\Debug\Services.pdb
+D:\Himmat Singh\Testapi\Services\bin\Debug\Services.dll.config
+D:\Himmat Singh\Testapi\Services\bin\Debug\DAL.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\EntityFramework.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\EntityFramework.SqlServer.dll
+D:\Himmat Singh\Testapi\Services\bin\Debug\DAL.pdb
+D:\Himmat Singh\Testapi\Services\bin\Debug\DAL.dll.config
+D:\Himmat Singh\Testapi\Services\bin\Debug\EntityFramework.xml
+D:\Himmat Singh\Testapi\Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\Services.dll.config
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\Services.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\Services.pdb
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\DAL.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\Dbconnection.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\EntityFramework.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\View_Model.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\DAL.pdb
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\Dbconnection.pdb
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\View_Model.pdb
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\EntityFramework.xml
+E:\Hemant\NPF Web Api\Final\Testapi\Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\Hemant\NPF Web Api\Final\Testapi\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\Hemant\NPF Web Api\Final\Testapi\Services\obj\Debug\Services.dll
+E:\Hemant\NPF Web Api\Final\Testapi\Services\obj\Debug\Services.pdb

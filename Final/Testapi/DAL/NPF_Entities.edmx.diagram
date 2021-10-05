@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fbdb0226188e48a0a5f1b44e06dd39f2" Name="Diagram1">
+        <EntityTypeShape EntityType="demoModel.CurrentSession" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.NPF_Enquiry" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.NPF_NPF_details" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_exams" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_members" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_questions" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_subjects" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.Course_Level_Master" Width="1.5" PointX="7.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.Course_Master" Width="1.5" PointX="5.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_examsresult" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.oe_option" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="demoModel.FK__oe_exams__mid__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="demoModel.FK__oe_exams__sid__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="demoModel.FK__oe_question__sid__117F9D94" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demoModelStoreContainer" CdmEntityContainer="demoEntities">
+    <EntitySetMapping Name="CurrentSessions">
+      <EntityTypeMapping TypeName="demoModel.CurrentSession">
+        <MappingFragment StoreEntitySet="CurrentSession">
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="IsCurrentSession" ColumnName="IsCurrentSession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NPF_Enquiry">
+      <EntityTypeMapping TypeName="demoModel.NPF_Enquiry">
+        <MappingFragment StoreEntitySet="NPF_Enquiry">
+          <ScalarProperty Name="EnqId" ColumnName="EnqId" />
+          <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NPF_NPF_details">
+      <EntityTypeMapping TypeName="demoModel.NPF_NPF_details">
+        <MappingFragment StoreEntitySet="NPF_NPF_details">
+          <ScalarProperty Name="EnqId" ColumnName="EnqId" />
+          <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_exams">
+      <EntityTypeMapping TypeName="demoModel.oe_exams">
+        <MappingFragment StoreEntitySet="oe_exams">
+          <ScalarProperty Name="examid" ColumnName="examid" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="noq" ColumnName="noq" />
+          <ScalarProperty Name="nocans" ColumnName="nocans" />
+          <ScalarProperty Name="stdate" ColumnName="stdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_members">
+      <EntityTypeMapping TypeName="demoModel.oe_members">
+        <MappingFragment StoreEntitySet="oe_members">
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dlv" ColumnName="dlv" />
+          <ScalarProperty Name="dr" ColumnName="dr" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_questions">
+      <EntityTypeMapping TypeName="demoModel.oe_questions">
+        <MappingFragment StoreEntitySet="oe_questions">
+          <ScalarProperty Name="qid" ColumnName="qid" />
+          <ScalarProperty Name="qodr" ColumnName="qodr" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="ans1" ColumnName="ans1" />
+          <ScalarProperty Name="ans2" ColumnName="ans2" />
+          <ScalarProperty Name="ans3" ColumnName="ans3" />
+          <ScalarProperty Name="ans4" ColumnName="ans4" />
+          <ScalarProperty Name="cans" ColumnName="cans" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_subjects">
+      <EntityTypeMapping TypeName="demoModel.oe_subjects">
+        <MappingFragment StoreEntitySet="oe_subjects">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="noq" ColumnName="noq" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_Level_Master">
+      <EntityTypeMapping TypeName="demoModel.Course_Level_Master">
+        <MappingFragment StoreEntitySet="Course_Level_Master">
+          <ScalarProperty Name="Course_Level_Id" ColumnName="Course_Level_Id" />
+          <ScalarProperty Name="Course_Level_Name" ColumnName="Course_Level_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_Master">
+      <EntityTypeMapping TypeName="demoModel.Course_Master">
+        <MappingFragment StoreEntitySet="Course_Master">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Course_Level_Id" ColumnName="Course_Level_Id" />
+          <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+          <ScalarProperty Name="Course_Duration" ColumnName="Course_Duration" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_examsresult">
+      <EntityTypeMapping TypeName="demoModel.oe_examsresult">
+        <MappingFragment StoreEntitySet="oe_examsresult">
+          <ScalarProperty Name="examid" ColumnName="examid" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="c_ans" ColumnName="c_ans" />
+          <ScalarProperty Name="u_ans" ColumnName="u_ans" />
+          <ScalarProperty Name="sysdate" ColumnName="sysdate" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oe_option">
+      <EntityTypeMapping TypeName="demoModel.oe_option">
+        <MappingFragment StoreEntitySet="oe_option">
+          <ScalarProperty Name="OpID" ColumnName="OpID" />
+          <ScalarProperty Name="OpValue" ColumnName="OpValue" />
+          <ScalarProperty Name="OpChar" ColumnName="OpChar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getexamdetails" FunctionName="demoModel.Store.getexamdetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.getexamdetails_Result">
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNpfEnquiry" FunctionName="demoModel.Store.GetNpfEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetNpfEnquiry_Result">
+          <ScalarProperty Name="EnqId" ColumnName="EnqId" />
+          <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetResultDetails" FunctionName="demoModel.Store.GetResultDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetResultDetails_Result">
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="ans1" ColumnName="ans1" />
+          <ScalarProperty Name="ans2" ColumnName="ans2" />
+          <ScalarProperty Name="ans3" ColumnName="ans3" />
+          <ScalarProperty Name="ans4" ColumnName="ans4" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="c_ans" ColumnName="c_ans" />
+          <ScalarProperty Name="u_ans" ColumnName="u_ans" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="examid" ColumnName="examid" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="qid" ColumnName="qid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetResultPrint" FunctionName="demoModel.Store.GetResultPrint">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetResultPrint_Result">
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="UserAnswer" ColumnName="UserAnswer" />
+          <ScalarProperty Name="qid" ColumnName="qid" />
+          <ScalarProperty Name="qodr" ColumnName="qodr" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="ans1" ColumnName="ans1" />
+          <ScalarProperty Name="ans2" ColumnName="ans2" />
+          <ScalarProperty Name="ans3" ColumnName="ans3" />
+          <ScalarProperty Name="ans4" ColumnName="ans4" />
+          <ScalarProperty Name="cans" ColumnName="cans" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetResultValue" FunctionName="demoModel.Store.GetResultValue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetResultValue_Result">
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="CrtAns" ColumnName="CrtAns" />
+          <ScalarProperty Name="wrng" ColumnName="wrng" />
+          <ScalarProperty Name="crtprct" ColumnName="crtprct" />
+          <ScalarProperty Name="wrngprcnt" ColumnName="wrngprcnt" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetResultValueUni" FunctionName="demoModel.Store.GetResultValueUni">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetResultValueUni_Result">
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="dr" ColumnName="dr" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="AttemptedQuestion" ColumnName="AttemptedQuestion" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="CrtAns" ColumnName="CrtAns" />
+          <ScalarProperty Name="wrng" ColumnName="wrng" />
+          <ScalarProperty Name="crtprct" ColumnName="crtprct" />
+          <ScalarProperty Name="wrngprcnt" ColumnName="wrngprcnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSDetails" FunctionName="demoModel.Store.GetSDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetSDetails_Result">
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dlv" ColumnName="dlv" />
+          <ScalarProperty Name="dr" ColumnName="dr" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStudentDetails" FunctionName="demoModel.Store.GetStudentDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.GetStudentDetails_Result">
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="Enq_No" ColumnName="Enq_No" />
+          <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dlv" ColumnName="dlv" />
+          <ScalarProperty Name="dr" ColumnName="dr" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertAnswerData" FunctionName="demoModel.Store.InsertAnswerData" />
+    <FunctionImportMapping FunctionImportName="InsertLoginDetail" FunctionName="demoModel.Store.InsertLoginDetail" />
+    <FunctionImportMapping FunctionImportName="INSERTQuestion" FunctionName="demoModel.Store.INSERTQuestion" />
+    <FunctionImportMapping FunctionImportName="NPF_InsertEnquiry" FunctionName="demoModel.Store.NPF_InsertEnquiry" />
+    <FunctionImportMapping FunctionImportName="SendExamMail" FunctionName="demoModel.Store.SendExamMail" />
+    <FunctionImportMapping FunctionImportName="SendMailForExam" FunctionName="demoModel.Store.SendMailForExam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="demoModel.SendMailForExam_Result">
+          <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateQuestion" FunctionName="demoModel.Store.UpdateQuestion" />
+    <FunctionImportMapping FunctionImportName="UpdateStudetExamQuestion" FunctionName="demoModel.Store.UpdateStudetExamQuestion" />
+  </EntityContainerMapping>
+</Mapping>
